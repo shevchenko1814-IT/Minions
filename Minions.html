@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Посіпаки — маленькі помічники Ґру</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #243044;
+            background: #fffbea;
+        }
+
+        header {
+            padding: 18px 8%;
+            background: #243044;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            margin: 0;
+            color: #ffdc3d;
+            font-size: 1.5rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        nav a:hover {
+            color: #ffdc3d;
+        }
+
+        .hero {
+            min-height: 440px;
+            padding: 70px 8%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            background: linear-gradient(135deg, #ffdc3d, #ffe982);
+        }
+
+        .hero-text {
+            max-width: 550px;
+        }
+
+        .hero h2 {
+            margin: 0 0 16px;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            line-height: 1;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 13px 22px;
+            border-radius: 30px;
+            background: #243044;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background: #3a4c68;
+        }
+
+        .minion {
+            position: relative;
+            width: 180px;
+            height: 270px;
+            flex: 0 0 180px;
+            border: 7px solid #e3ad18;
+            border-radius: 90px 90px 65px 65px;
+            background: #ffdc3d;
+            box-shadow: 10px 12px 0 #d29f16;
+        }
+
+        .goggles {
+            position: absolute;
+            top: 72px;
+            left: 17px;
+            width: 132px;
+            height: 57px;
+            border: 9px solid #777;
+            border-radius: 35px;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .eye {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #56402d;
+            border: 7px solid #d6b18a;
+        }
+
+        .mouth {
+            position: absolute;
+            top: 155px;
+            left: 59px;
+            width: 52px;
+            height: 18px;
+            border-bottom: 5px solid #493526;
+            border-radius: 50%;
+        }
+
+        .overalls {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 86px;
+            border-radius: 0 0 55px 55px;
+            background: #287cc2;
+            border-top: 7px solid #1c619b;
+        }
+
+        .overalls::before,
+        .overalls::after {
+            content: "";
+            position: absolute;
+            top: -25px;
+            width: 38px;
+            height: 30px;
+            background: #287cc2;
+            border-top: 6px solid #1c619b;
+        }
+
+        .overalls::before {
+            left: 17px;
+            transform: rotate(25deg);
+        }
+
+        .overalls::after {
+            right: 17px;
+            transform: rotate(-25deg);
+        }
+
+        section {
+            padding: 60px 8%;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        .about {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 22px;
+            margin-top: 30px;
+        }
+
+        .card {
+            padding: 25px;
+            text-align: center;
+            background: white;
+            border-radius: 18px;
+            box-shadow: 0 5px 18px #24304418;
+        }
+
+        .card .emoji {
+            font-size: 3.5rem;
+        }
+
+        .card h3 {
+            margin-bottom: 8px;
+            color: #2275b9;
+        }
+
+        .fun-fact {
+            text-align: center;
+            background: #e5f4ff;
+            border-radius: 18px;
+            line-height: 1.7;
+        }
+
+        footer {
+            padding: 22px;
+            text-align: center;
+            color: white;
+            background: #243044;
+        }
+
+        @media (max-width: 650px) {
+            header {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav a {
+                margin: 0 8px;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<header>
+    <h1 class="logo">Жовта команда</h1>
+    <nav>
+        <a href="#about">Про них</a>
+        <a href="#characters">Персонажі</a>
+        <a href="#fact">Цікавий факт</a>
+    </nav>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="hero-text">
+            <h2>Привіт, ми Посіпаки!</h2>
+            <p>
+                Маленькі, веселі й дуже віддані помічники Ґру.
+                Вони обожнюють пригоди, банани та працювати разом!
+            </p>
+            <a class="button" href="#characters">Познайомитися з командою</a>
+        </div>
+
+        <div class="minion" aria-label="Малюнок Посіпаки">
+            <div class="goggles"><div class="eye"></div></div>
+            <div class="mouth"></div>
+            <div class="overalls"></div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>Хто такі Посіпаки?</h2>
+        <p class="about">
+            Посіпаки — кумедні жовті істоти з мультфільмів «Нікчемний Я».
+            Вони допомагають Ґру в його пригодах, часто потрапляють у смішні
+            ситуації та завжди підтримують одне одного.
+        </p>
+    </section>
+
+    <section id="characters">
+        <h2>Знайомся з Посіпаками</h2>
+        <div class="cards">
+            <article class="card">
+                <div class="emoji">😎</div>
+                <h3>Кевін</h3>
+                <p>Високий і відповідальний. Часто стає лідером команди.</p>
+            </article>
+
+            <article class="card">
+                <div class="emoji">🍌</div>
+                <h3>Стюарт</h3>
+                <p>Любить музику, веселощі та, звісно, банани.</p>
+            </article>
+
+            <article class="card">
+                <div class="emoji">🤓</div>
+                <h3>Боб</h3>
+                <p>Добрий і допитливий Посіпака з великим серцем.</p>
+            </article>
+        </div>
+    </section>
+
+    <section id="fact" class="fun-fact">
+        <h2>Цікавий факт</h2>
+        <p>
+            Посіпаки вигадали власну кумедну мову — у ній можна почути
+            слова з різних мов світу!
+        </p>
+    </section>
+</main>
+
+<footer>
+    <p>Сайт про Посіпак • Створено з гарним настроєм 🍌</p>
+</footer>
+</body>
+</html>
